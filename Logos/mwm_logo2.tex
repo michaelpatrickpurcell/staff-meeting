@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+\usepackage{fontspec}
+\setmainfont{HoltwoodOneSC}%{Roboto Slab-Black}
+\begin{document}
+\Huge
+
+\begin{tikzpicture}
+	\node[rotate=180] at (90:0.99ex) {M};
+	\node[rotate=300] at (210:0.99ex) {M};
+	\node[rotate=60] at (330:0.99ex) {M};
+	
+	\draw[line width=0.275ex] (120:2.25ex) -- (60:2.25ex) -- (0:2.25ex) -- (300:2.25ex) -- (240:2.25ex) -- (180:2.25ex) -- cycle;
+%	\draw[line width=0.2ex] (0,0) circle (2.1ex);
+\end{tikzpicture}
+
+\end{document}

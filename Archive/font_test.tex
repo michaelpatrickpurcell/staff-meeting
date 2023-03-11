@@ -1,0 +1,110 @@
+\documentclass[12pt, parskip=half*, DIV=20, twocolumn, footinclude=no, headinclude=no, a4paper]{scrartcl}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{lipsum}
+\usepackage{ragged2e}
+
+\usepackage{fontspec}
+\setlength{\columnsep}{1.25cm} 
+%\raggedright
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip= 0cm,
+  afterskip=0cm,
+]{section}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=0pt,
+  afterskip=0ex,
+]{subsection}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=0pt,
+  afterskip=0ex,
+]{subsubsection}
+
+\makeatletter
+\newcommand{\version}[1]{\newcommand{\@version}{#1}}
+\makeatother
+
+\usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
+% Set header
+\clearpairofpagestyles
+\makeatletter
+\cfoot*{\normalshape Version \@version}
+\makeatother
+
+% Minimize unwanted hyphenation
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=1
+%\hbadness=10000
+
+
+\RaggedRight
+\version{0.1}
+\begin{document}
+\thispagestyle{empty}
+\setkomafont{title}{\setmainfont[Scale=4.6]{Magic School One}}%
+%\setkomafont{title}{\setmainfont[Scale=3.5,Ligatures=Discretionary]{Ottselesque}}%
+%\setkomafont{title}{\setmainfont[Scale=4.7]{Started by a Mouse}}%
+%\setkomafont{title}{\setmainfont[Scale=3.5]{Arkana}}%
+\setkomafont{title}{\setmainfont[Scale=3.0]{Dark Crystal-Regular}}%
+%\setkomafont{title}{\setmainfont[Scale=3.25]{Dark Crystal-Outline}}%
+%\setkomafont{title}{\setmainfont[Scale=3.25]{Midwinter Fire}}%
+%\setkomafont{title}{\setmainfont[Scale=3.25]{DwarvenAxe-Regular}}%
+%\setkomafont{title}{\setmainfont[Scale=3.625]{Griffy}}
+%\setkomafont{title}{\setmainfont[Scale=3.5]{Bilbo Swash Caps}}
+%\setkomafont{title}{\setmainfont[Scale=7.0]{Hocus Pocus}}%
+%\setkomafont{title}{\setmainfont[Scale=2.2]{PlainGermanica}}%
+\setkomafont{title}{\setmainfont[Scale=3.0]{Grizzly Attack}}%
+%\setkomafont{title}{\setmainfont[Scale=3.0]{Sprite Graffiti}}%
+\addtokomafont{title}{\vspace{-1cm}}
+
+\setkomafont{author}{\vspace{-0.8cm}\Huge\setmainfont{Bilbo Swash Caps}}
+%\setkomafont{section}{\setmainfont{QTBlackForest}\Huge}
+%\setkomafont{section}{\setmainfont{QTHeidelbergType}\Huge}
+%\setkomafont{section}{\setmainfont{Griffy}\Huge}
+\setkomafont{section}{\setmainfont{Able New}\Huge}
+\setkomafont{section}{\setmainfont{Tex Gyre Chorus}\Huge}
+\setkomafont{subsection}{\setmainfont{Able New}\huge}
+\setkomafont{subsubsection}{\setmainfont{Able New}\LARGE}
+
+\setmainfont{Cochin}
+%\setmainfont{EB Garamond}
+%\setmainfont{Baskerville}
+%\setmainfont{Georgia}
+%\setmainfont[Scale=0.95]{URW Classico}
+
+\title{Staff Meeting\vspace{-0.75cm}}
+\title{Parliament\\of Dragons\vspace{-1.25cm}}
+\title{Kill the Beast\vspace{-0.75cm}}
+%\title{Gang Squad\vspace{-0.75cm}}
+\author{}%by Michael Purcell}
+\date{}
+
+\maketitle
+\pagestyle{plain}
+\vspace{-1.5cm}
+\section*{Overview}
+\lipsum[4]
+
+\section*{Themes}
+\lipsum[10-11]
+\newpage
+
+\section*{Mechanics}
+\lipsum[3]
+
+\section*{Characters}
+\lipsum[15]
+
+\end{document}
+

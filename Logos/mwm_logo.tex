@@ -1,0 +1,57 @@
+\documentclass{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+\begin{document}
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{main}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background, main, foreground}
+
+\begin{tikzpicture}[blend mode=screen]
+	\coordinate (t1) at (90:1cm) {};
+	\coordinate (t2) at (330:1cm) {};
+	\coordinate (t3) at (210:1cm) {};
+
+	\coordinate (h1) at (60:2.25cm) {};
+	\coordinate (h2) at (0:2.25cm) {};
+	\coordinate (h3) at (300:2.25cm) {};
+	\coordinate (h4) at (240:2.25cm) {};
+	\coordinate (h5) at (180:2.25cm) {};
+	\coordinate (h6) at (120:2.25cm) {};
+	
+
+	\path[ultra thick, fill=none, rounded corners=1mm, name path=m1] (h5) -- (t1) -- (t3) -- (t2) -- (h4);
+	\path[ultra thick, fill=none, rounded corners=1mm, name path=m2] (h1) -- (t2) -- (t1) -- (t3) -- (h6);
+	\path[ultra thick, fill=none, rounded corners=1mm, name path=m3] (h3) -- (t3) -- (t2) -- (t1) -- (h2);
+	
+\begin{pgfonlayer}{background}
+	\fill[gray, ultra thick, name intersections={of=m1 and m2, name=i}, rounded corners=1mm] (i-1) -- (h6) -- (h5) -- cycle;
+	\fill[gray, name intersections={of=m2 and m3, name=j}, rounded corners=1mm] (j-1) -- (h1) -- (h2) -- cycle;
+	\fill[gray, name intersections={of=m3 and m1, name=k}, rounded corners=1mm] (k-1) -- (h3) -- (h4) -- cycle;
+
+	\fill[gray, rounded corners=1mm] (t1) -- (t2) -- (t3) -- cycle;
+\end{pgfonlayer}
+
+\begin{pgfonlayer}{foreground}
+	\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1pt, shorten >= 1pt] (h5) -- (t1) -- (t3) -- (t2) -- (k-1) -- (h4);
+%	\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1mm, shorten >= 1pt] (k-1) -- (h4);
+
+	\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1pt, shorten >= 1pt] (h1) -- (t2) -- (t1) -- (t3) -- (i-1) -- (h6);
+%	\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1mm, shorten >= 1pt] (i-1) -- (h6);
+
+	\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1pt, shorten >= 1pt] (h3) -- (t3) -- (t2) -- (t1) -- (j-1) -- (h2);
+%		\draw[ultra thick, fill=none, rounded corners=1mm, shorten <= 1mm, shorten >= 1pt] (j-1) -- (h2);
+%
+	\draw[black, ultra thick, rounded corners=1mm] (h1) -- (h2) -- (h3) -- (h4) -- (h5) -- (h6) -- cycle;
+%\draw[black, ultra thick] (0,0) circle (2.5cm);
+
+\end{pgfonlayer}
+	
+
+\end{tikzpicture}
+
+\end{document}
