@@ -1,0 +1,23 @@
+\documentclass{standalone}
+
+\usepackage{fontspec}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+\setmainfont[Scale=3.5]{Magic School One}
+\huge
+\node[inner sep=0pt] at (0,3cm) {Staff Meeting};
+
+\node[inner sep=0pt] at (-2.5cm,-1cm) {\includegraphics[scale=0.03]{Images/wizard_with_staff.png}};
+
+\node[inner sep=0pt] at (2.5cm,-1cm) {\scalebox{-1}[1]{\includegraphics[scale=0.03]{Images/wizard_with_staff.png}}};
+
+\setmainfont{Bilbo Swash Caps}
+\huge
+\node[inner sep=0pt] at (0,-4.25cm) {A Scoratic Worldbuilding Game by Michael Purcell};
+
+\path (-6.3cm, -5cm) -- (6.3cm, 5cm);
+\end{tikzpicture}
+
+\end{document}

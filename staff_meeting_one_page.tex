@@ -1,0 +1,91 @@
+\documentclass[12pt, parskip=half*, DIV=20, footinclude=no, headinclude=no, a4paper]{scrartcl}
+
+\usepackage{pullquote}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{lipsum}
+\usepackage{ragged2e}
+
+\usepackage{fontspec}
+\setlength{\columnsep}{1.25cm} 
+%\raggedright
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip= 0cm,
+  afterskip=1.25ex,
+]{section}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=0pt,
+  afterskip=0ex,
+]{subsection}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=0pt,
+  afterskip=0ex,
+]{subsubsection}
+
+\makeatletter
+\newcommand{\version}[1]{\newcommand{\@version}{#1}}
+\makeatother
+
+\usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
+% Set header
+\clearpairofpagestyles
+\makeatletter
+\cfoot*{\normalshape Version \@version}
+\makeatother
+
+% Minimize unwanted hyphenation
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=1
+%\hbadness=10000
+
+
+\RaggedRight
+\version{0.1}
+\begin{document}
+\thispagestyle{empty}
+\setkomafont{title}{\setmainfont[Scale=4.6]{Magic School One}}%
+\addtokomafont{title}{\vspace{-1cm}}
+
+\setkomafont{author}{\vspace{-0.8cm}\Huge\setmainfont{Bilbo Swash Caps}}
+\setkomafont{section}{\setmainfont{Able New}\Huge\center}
+\setkomafont{subsection}{\setmainfont{Able New}\huge}
+\setkomafont{subsubsection}{\setmainfont{Able New}\LARGE}
+
+\setmainfont{Cochin}
+
+\title{Staff Meeting\vspace{-0.75cm}}
+\author{}%by Michael Purcell}
+\date{}
+
+\maketitle
+\pagestyle{plain}
+%\vspace{-1.5cm}
+%\section*{Gameplay}
+\begin{pullquote}{object={\includegraphics[scale=0.03]{wizard_with_staff.png}}, shape=rectangular}
+%\section*{Overview}
+\lipsum[1-2]
+\end{pullquote}
+%\section*{Themes}
+%\lipsum[10-11]
+%%\newpage
+%
+%%\section*{Mechanics}
+%\lipsum[3]
+%
+%%\section*{Characters}
+%\lipsum[15]
+
+
+\end{document}
+
