@@ -10,6 +10,7 @@ You will portray a teacher who works at the school. To create your character,
   1. Describe the subject that you teach.
   2. Describe your mannerisms and physical appearance.
   3. Describe two types of questions about staffs that you can answer.
+  4. Describe one objective that you want to accomplish at the meeting.
 
 Introduce yourself to the other characters before the meeting begins.
 
