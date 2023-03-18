@@ -43,7 +43,21 @@
 \usepackage{enumitem}
 \setlist[description]{labelindent=0pt, labelsep=\widthof{ }, leftmargin=\widthof{\textbf{License: }}, font=\setmainfont{Cochin}\bfseries}
 
-\usepackage{hyperref}
+\usepackage[hang,flushmargin]{footmisc}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth height 0.5pt
+  \kern 2pt
+}
+
+\usepackage[hidelinks]{hyperref}
 \usepackage[type={CC}, version={4.0}, modifier={by-sa}]{doclicense} % Add text and icons for creative commons license
 %\usepackage{array}
 
